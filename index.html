@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#ff8fab">
+  <title>三丙集章任務</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sky" aria-hidden="true"><span>★</span><span>☁</span><span>★</span><span>☁</span></div>
+  <header class="hero">
+    <p class="eyebrow">棒棒表現・天天累積</p>
+    <h1>三丙集章任務 <span>✨</span></h1>
+    <p>每一個小小的好表現，都會變成閃亮亮的星星！</p>
+    <a class="primary" href="#passport">開始集星星</a>
+  </header>
+
+  <main>
+    <section class="panel intro" id="passport">
+      <div>
+        <p class="kicker">MY STAR PASSPORT</p>
+        <h2>我的棒棒章存摺</h2>
+        <label>姓名<input id="studentName" maxlength="12" placeholder="輸入姓名"></label>
+        <label>座號<input id="seatNo" inputmode="numeric" maxlength="3" placeholder="例如：12"></label>
+      </div>
+      <div class="counter-card">
+        <div class="counter-label">目前棒棒章</div>
+        <strong id="stampCount">0</strong><span> 個</span>
+        <div class="star-strip" id="starStrip" aria-label="目前星星數"></div>
+        <p><b id="starCount">0</b> 顆星星　／　5 顆可換 1 個棒棒章</p>
+        <div class="counter-actions">
+          <button class="circle minus" id="removeStar" aria-label="減少一顆星">−</button>
+          <button class="add" id="addStar">＋ 得到一顆星星</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="heading"><p class="kicker">HOW TO SHINE</p><h2>怎麼獲得星星？</h2></div>
+      <div class="good-grid">
+        <article><i>🙋</i><b>用心回答</b><span>勇敢舉手、認真思考</span></article>
+        <article><i>🤝</i><b>幫助同學</b><span>友善合作、互相提醒</span></article>
+        <article><i>👀</i><b>上課專心</b><span>眼睛看、耳朵聽</span></article>
+        <article><i>🧹</i><b>認真打掃</b><span>把教室照顧得亮晶晶</span></article>
+        <article><i>💪</i><b>主動幫忙</b><span>看見需要就伸出手</span></article>
+        <article><i>🏆</i><b>為班級爭光</b><span>參加比賽，加 1 個棒棒章</span></article>
+      </div>
+      <p class="note">收到科任老師的讚美，可加 2 顆星星喔！</p>
+    </section>
+
+    <section class="section rewards">
+      <div class="heading"><p class="kicker">REWARD SHOP</p><h2>棒棒章兌換所</h2><p>按下「我要兌換」後，請拿給老師確認。</p></div>
+      <div class="reward-grid" id="rewardGrid"></div>
+    </section>
+
+    <section class="section prize-section">
+      <div class="heading"><p class="kicker">LUCKY DRAW</p><h2>5 個棒棒章・抽抽樂</h2></div>
+      <div class="draw-box">
+        <div class="ball" id="drawBall">?</div>
+        <div><h3 id="drawTitle">今天會抽到什麼呢？</h3><p id="drawHint">每次抽獎需由老師確認扣除 5 個棒棒章。</p><button class="primary" id="drawButton">開始抽抽樂</button></div>
+      </div>
+      <details><summary>查看 1～20 號獎項</summary><ol class="prize-list" id="prizeList"></ol></details>
+    </section>
+
+    <section class="section cards-section">
+      <div class="heading"><p class="kicker">SPECIAL CARDS</p><h2>我的特別獎勵卡</h2><p>可將 Canva 匯出的圖片放進 assets 資料夾，再依 README 替換。</p></div>
+      <div class="special-grid">
+        <article class="special snack"><span>🍪</span><h3>甜心卡</h3><p>想吃點心時，拿卡片找老師兌換。</p></article>
+        <article class="special nap"><span>🌙</span><h3>免睡卡</h3><p>午休時安靜閱讀，不需睡覺一次。</p></article>
+        <article class="special shield"><span>🛡️</span><h3>免罰金牌</h3><p>依班級規定使用一次。</p></article>
+      </div>
+    </section>
+
+    <section class="section team">
+      <div class="heading"><p class="kicker">TEAM POWER</p><h2>小組好表現</h2></div>
+      <p>秩序、座位整潔、作業繳交、潔牙和漱口，每天統計各組爬格子分數。兩週結算一次，獎牌最多的小組成為冠軍並參加抽抽樂！</p>
+    </section>
+
+    <section class="section history">
+      <div class="heading"><p class="kicker">MY RECORD</p><h2>我的兌換紀錄</h2></div>
+      <div id="emptyHistory" class="empty">目前還沒有紀錄，繼續加油！</div>
+      <div class="table-wrap"><table><thead><tr><th>日期</th><th>章數</th><th>兌換項目</th><th>老師確認</th></tr></thead><tbody id="historyBody"></tbody></table></div>
+      <button class="text-button" id="clearData">清除本機資料</button>
+    </section>
+  </main>
+
+  <footer>三丙集章任務 · 每一天都比昨天更棒 🌈</footer>
+  <dialog id="confirmDialog"><form method="dialog"><div class="dialog-icon">🎁</div><h3 id="dialogTitle"></h3><p id="dialogText"></p><div class="dialog-actions"><button value="cancel">再想一下</button><button class="primary" value="confirm">老師確認兌換</button></div></form></dialog>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
